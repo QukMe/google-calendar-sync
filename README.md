@@ -6,11 +6,6 @@ Desktop application that pulls a teacher's schedule from the Grodno State Univer
 ![Avalonia](https://img.shields.io/badge/Avalonia-11.3.6-8B44AC)
 ![Google Calendar API](https://img.shields.io/badge/Google%20Calendar%20API-v3-4285F4)
 
-## Screenshot
-
-<!-- TODO: add screenshot to docs/screenshot.png -->
-![Application window](docs/screenshot.png)
-
 ## Problem & Solution
 
 GrSU provides teacher schedules through a public API, but they are not available as a calendar, so keeping them in Google Calendar means recreating dates and rooms manually. This application selects a teacher and a date range, loads the schedule from the GrSU API, and writes it into a dedicated Google Calendar. Every run reconciles instead of appending: existing events are updated, missing ones are inserted, and lessons that disappeared from the schedule are removed. Re-running the sync is idempotent within a single unpaginated `events.list` page; events beyond the first page are not reconciled. The OAuth token is cached locally.
