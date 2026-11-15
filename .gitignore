@@ -1,0 +1,18 @@
+# Credentials and secrets
+credentials.json
+client_secret*.json
+token.json/
+
+# Local app state
+settings.txt
+
+# IDE
+.idea/
+*.DotSettings.user
+
+# Build output
+bin/
+obj/
+
+# OS
+.DS_Store
